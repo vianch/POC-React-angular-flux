@@ -14,12 +14,7 @@ angular.module('app').controller('holidaysController', ['$scope', ($scope) => {
 
 
 	HolidaysStore.listen((status) => {
-	    $scope.data = {
-		 	content : status,
-		};
+	    $scope.data.content = status;
 	}); 
-
-
-	
 	
 }]);

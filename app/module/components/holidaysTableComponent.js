@@ -6,17 +6,20 @@ class HolidaysTableComponent extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this.divStyle = {
+			marginTop: '50px'
+		};
 	}
 
 	render() {
 		return <div className="form-group">
-				    <div className="col-sm-12">
-				        <div className="table-responsive">
+				    <div className="col-sm-12"> 
+				        <div className="table-responsive" style={this.divStyle}> 
 				            <table className="table table-bordered tablesorter">
 				                <thead>
 				                <tr>
-				                    <th>Dates <i className="fa" ng-class="{false:'fa-caret-down',true:'fa-caret-up'}[isAscendantDate]" ng-hide="isAscendantDate === null"></i></th>
-				                    <th>Description <i className="fa" ng-class="{false:'fa-caret-down',true:'fa-caret-up'}[isAscendantDescription]" ng-hide="isAscendantDescription === null"></i></th>
+				                    <th>Dates</th>
+				                    <th>Description</th>
 				                </tr>
 				                </thead>
 				                <tbody>

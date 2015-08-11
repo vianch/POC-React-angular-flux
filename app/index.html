@@ -8,7 +8,16 @@
 </head>
 <body ng-controller="holidaysController">
 
- <holidays-table-directive /> 
+<div class="bas-wrapper col-md-12 os-window-content unselectable">
+     
+    <div class="row">
+        <input style="z-index: 100000; position: absolute;top: 25px; right: 30px; border: 1px solid;" type="text" ng-model ="data.display" />
+    </div>
+
+    <holidays-table-directive display='data.display'/> 
+
+</div>
+
 
  <script src="module/react-angular.js"></script>
 

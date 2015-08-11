@@ -1,8 +1,9 @@
 import React from 'react';
 import HolidaysTableComponent from './holidaysTableComponent';
+import HolidaysDisplayComponent from './holidaysDisplayComponent';
 import HolidaysStore from '../stores/holidaysStore';
 
-export default class HolidaysComponent extends React.Component {
+class HolidaysComponent extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -22,10 +23,12 @@ export default class HolidaysComponent extends React.Component {
 
 	componentWillUnmount() {
 		this.unsubscribe();
-	}
+	} 
 
 	render() {
-		return <div className="bas-wrapper col-md-12 os-window-content unselectable">
+		return <div>
+					<div className="row"><HolidaysDisplayComponent display={this.props.display} /></div>
+
 				    <div className="row">
 				        <div className="bas-content-wrapper col-md-12">
 				            <div ui-view="webFormTemplate">
@@ -49,3 +52,13 @@ export default class HolidaysComponent extends React.Component {
 	}
 
 }
+
+HolidaysComponent.propTypes = {
+	display: React.PropTypes.string.isRequired
+}
+
+HolidaysComponent.defaultProps = {
+	display: 'default'
+}; 
+
+export default HolidaysComponent;
