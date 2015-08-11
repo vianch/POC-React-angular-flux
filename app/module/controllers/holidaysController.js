@@ -1,16 +1,25 @@
 import HolidaysActions from '../actions/holidaysActions';
+import HolidaysStore from '../stores/holidaysStore';
 
 angular.module('app').controller('holidaysController', ['$scope', ($scope) => {
+	
 	$scope.data = {
-		 content : {
-			date: 'Date1', 
-			description: 'Description 1',
-			displayName: 'Display name scope'
-		}
+		content : [],
+		display: ''
 	};
 
 	setInterval(() => { 
 	  	HolidaysActions.fetchHolidayData();
-	 },2500)
+	 },3000)
+
+
+	HolidaysStore.listen((status) => {
+	    $scope.data = {
+		 	content : status,
+		};
+	}); 
+
+
+	
 	
 }]);

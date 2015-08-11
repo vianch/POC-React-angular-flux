@@ -1,28 +1,11 @@
 import React from 'react';
-import HolidaysTableRowComponent from './HolidaysTableRowComponent';
-import HolidaysStore from '../stores/holidaysStore';
+import HolidaysTableRowComponent from './holidaysTableRowComponent';
 import Uid from 'uid';
 
 class HolidaysTableComponent extends React.Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			data : []
-		}
-	}
-
-	componentDidMount() {
-        this.unsubscribe = HolidaysStore.listen((status) => {
-        	this.setState({
-				data: status
-			});
-        });
-    }
-
-	componentWillUnmount() {
-		this.unsubscribe();
 	}
 
 	render() {
@@ -38,7 +21,7 @@ class HolidaysTableComponent extends React.Component {
 				                </thead>
 				                <tbody>
    								{
-				                    this.state.data.map((content) => {
+				                    this.props.data.map((content) => {
 				                    	return <HolidaysTableRowComponent 
 				                    	key = {Uid(10)}
 				                    	date = {content.date} 

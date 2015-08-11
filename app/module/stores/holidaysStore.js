@@ -20,6 +20,8 @@ const HolidaysStore = Reflux.createStore({
 			if(!error) {  
 				this.holidaysData = JSON.parse(response.text);
 				this.trigger(this.holidaysData);
+			} else {
+				console.error(`Can not connet to the server ${url}!`);
 			}
 		});
 	}	

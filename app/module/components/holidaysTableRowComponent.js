@@ -12,7 +12,7 @@ class HolidaysTableRowComponent extends React.Component {
 	render() {
 		return <tr>
 			<td> {this.props.date} </td>
-			<td> {this.props.description} </td>
+			<td><input type="text" ngModel={this.props.description}</td>
 		</tr>
 	}
 }

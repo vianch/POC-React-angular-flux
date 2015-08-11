@@ -12,7 +12,7 @@ module.exports = function(grunt) {
            },
            my_target: {
              files: {
-               'app/js/react-angular.min.js': ['app/js/react-angular.js']
+               'app/module/react-angular.min.js': ['app/module/react-angular.js']
              }
            }
          },
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         // Watches for changes in files and runs certain Grunt tasks.
         watch: {
             js: {
-                files: ['app/js/index.js'],
+                files: ['app/module/index.js'],
                 tasks: ['browserify','uglify']
             },
             styles: {
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         browserify: {
             dist: {
                 files: {
-                    'app/js/react-angular.js': ['app/js/index.js'],
+                    'app/module/react-angular.js': ['app/module/index.js'],
                 },
                 options: {
                     transform: ['babelify'],

@@ -7,45 +7,10 @@
 	<link rel="stylesheet" href="styles/bas-styles.css">
 </head>
 <body ng-controller="holidaysController">
-	
-<div class="bas-form-wrapper row">
-    <div class="bas-form-content col-md-12">
-        <div class="row bas-custom-row">
 
-            <!-- FORM -->
-            <form role="form" name="form" class="form-horizontal">
+ <holidays-table-directive /> 
 
-                <div class="form-group " ng-class="{'has-error' : !data.errorHandler.isValidDisplayName  }">
-                    <label class="col-sm-2 control-label text-right " >Display name *</label>
-                    <div class="col-sm-8 text-left">
-                        <input type="text" class="form-control k-textbox" placeholder="Display name" ng-model="data.content.displayName">
-                    </div>
-                    <div class="col-lg-offset-2"></div>
-                </div>
+ <script src="module/react-angular.js"></script>
 
-            </form>
-            <!--/ FORM -->
-
-            <!-- tabs -->
-            <div class="form-group form-group-tabset">
-                <div class="col-md-12">
-
-                   
-                      
-                            <holidays-table-directive date="data.content.date" description = "data.content.description"/> 
-                       
-
-                </div>
-            </div>
-            <!-- tabs -->
-
-        </div><!--/ row -->
-
-
-    </div>
-</div>
-   
-	<script src="modules/react-angular.js"></script>
-
-</body>
-</html>
+</body> 
+</html> 
